@@ -22,6 +22,9 @@ body {
   position: relative;
 }
 
+  <a class="btn" href="https://discord.gg/hw2gh5AU">
+دخول الدسكورد
+</a>
 .hero::before {
   content: "";
   position: absolute;
