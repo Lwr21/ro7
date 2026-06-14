@@ -118,3 +118,13 @@ function scrollToSection(){
 
 </body>
 </html>
+
+<section>
+<h2>الإدارة</h2>
+
+<div class="card">
+<h3>Lwr Rio M4 jizan 3bo MFLM Rakan </h3>
+<p> </p>
+</div>
+</section>
+
