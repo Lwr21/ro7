@@ -10,7 +10,7 @@ body{font-family:Tahoma,sans-serif;background:#000;color:#fff;scroll-behavior:sm
 nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.9);padding:15px;z-index:1000;text-align:center}
 nav a{color:#fff;text-decoration:none;margin:0 12px}
 .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1511512578047-dfb367046420') center/cover}
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('[https://images.unsplash.com/photo-1511512578047-dfb367046420](https://cdn.discordapp.com/attachments/1471169865330069736/1515848642232188938/home.png?ex=6a307f8f&is=6a2f2e0f&hm=1dc781d8b7421055525423010c1cedfd392bcbd70f2cf8e2b0a336224cf7fa27&)') center/cover}
 .hero h1{font-size:5rem}
 .hero p{margin:20px;font-size:1.3rem}
 .btn{display:inline-block;padding:14px 30px;border:1px solid #fff;border-radius:8px;color:#fff;text-decoration:none;margin:8px}
