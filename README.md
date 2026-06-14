@@ -1,108 +1,117 @@
-const express = require("express");
-const session = require("express-session");
-const axios = require("axios");
-require("dotenv").config();
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Ro7 Fight</title>
 
-const app = express();
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0a0a0a;
+  color: white;
+}
 
-app.use(session({
-  secret: "secret123",
-  resave: false,
-  saveUninitialized: false
-}));
+/* 🔥 الهيرو (الصورة الجديدة) */
+.hero {
+  height: 100vh;
+  background: url('home.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-app.get("/", (req, res) => {
-  if (!req.session.user) {
-    return res.send(`
-      <h1>Discord Login</h1>
-      <a href="/login">
-        <button>تسجيل دخول ديسكورد</button>
-      </a>
-    `);
-  }
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
 
-  res.send(`
-    <h1>مرحبا ${req.session.user.username}</h1>
-    <p>ID: ${req.session.user.id}</p>
-    <a href="/dashboard">الدخول للداشبورد</a><br><br>
-    <a href="/logout">تسجيل خروج</a>
-  `);
-});
+.hero-content {
+  position: relative;
+  text-align: center;
+}
 
-// رابط تسجيل الدخول
-app.get("/login", (req, res) => {
-  const CLIENT_ID = process.env.DISCORD_CLIENT_ID;
-  const REDIRECT = process.env.DISCORD_REDIRECT;
+.hero h1 {
+  font-size: 60px;
+  margin: 0;
+  color: white;
+}
 
-  const url = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT)}&response_type=code&scope=identify`;
+.hero span {
+  color: gold;
+}
 
-  res.redirect(url);
-});
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
 
-// كول باك ديسكورد
-app.get("/callback", async (req, res) => {
-  const code = req.query.code;
+.btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-  try {
-    const tokenRes = await axios.post(
-      "https://discord.com/api/oauth2/token",
-      new URLSearchParams({
-        client_id: process.env.DISCORD_CLIENT_ID,
-        client_secret: process.env.DISCORD_CLIENT_SECRET,
-        grant_type: "authorization_code",
-        code,
-        redirect_uri: process.env.DISCORD_REDIRECT
-      }),
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
-      }
-    );
+/* 🔗 الأقسام */
+section {
+  padding: 50px;
+}
 
-    const userRes = await axios.get("https://discord.com/api/users/@me", {
-      headers: {
-        Authorization: `Bearer ${tokenRes.data.access_token}`
-      }
-    });
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+</style>
+</head>
 
-    req.session.user = userRes.data;
+<body>
 
-    res.redirect("/");
-  } catch (err) {
-    res.send("خطأ في تسجيل الدخول");
-  }
-});
+<!-- 🔥 الصورة الرئيسية -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>RO7 <span>FIGHT</span></h1>
+    <p>سيرفر فايتات احترافي بإدارة Rio M4</p>
+    <button class="btn" onclick="scrollToSection()">ابدأ الآن</button>
+  </div>
+</div>
 
-// داشبورد
-app.get("/dashboard", (req, res) => {
-  if (!req.session.user) return res.redirect("/");
+<!-- 📌 المعلومات -->
+<section id="info">
+  <div class="card">
+    <h2>عن السيرفر</h2>
+    <p>Ro7 Fight هو سيرفر فايتات قوي يقدم نظام قتالات احترافي وتحديات يومية.</p>
+  </div>
 
-  res.send(`
-    <h1>Dashboard</h1>
-    <p>Welcome ${req.session.user.username}</p>
-    <p>Discord ID: ${req.session.user.id}</p>
+  <div class="card">
+    <h2>Owner</h2>
+    <p>Rio M4 👑</p>
+  </div>
 
-    <hr>
-
-    <h3>نظام الإدارة (جاهز للتطوير)</h3>
+  <div class="card">
+    <h2>القوانين</h2>
     <ul>
-      <li>✔ تسجيل دخول ديسكورد</li>
-      <li>⏳ نظام صلاحيات (لاحقاً)</li>
-      <li>⏳ ربط FiveM (لاحقاً)</li>
-      <li>⏳ لوحة تحكم كاملة</li>
+      <li>احترام الجميع</li>
+      <li>ممنوع الغش</li>
+      <li>ممنوع السب</li>
     </ul>
+  </div>
+</section>
 
-    <a href="/">رجوع</a>
-  `);
-});
+<script>
+function scrollToSection(){
+  document.getElementById("info").scrollIntoView({behavior:"smooth"});
+}
+</script>
 
-// تسجيل خروج
-app.get("/logout", (req, res) => {
-  req.session.destroy();
-  res.redirect("/");
-});
-
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
+</body>
+</html>
