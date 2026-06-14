@@ -46,14 +46,24 @@ footer{text-align:center;padding:30px;background:#111}
 
 <section id="rules" class="reveal">
 <h2>القوانين</h2>
-<div class="card">
-1- احترام الجميع<br>
-2- يمنع الغش<br>
-3- يمنع استغلال الثغرات<br>
-4- يمنع السب والشتم<br>
-5- الالتزام بقرارات الإدارة
-</div>
-</section>
+<div class="card"><h1>📝 Server Rules | قوانين السيرفر</h1>
+
+<h2>Server Rules</h2>
+<ul>
+<li>يجب عليك الاحترام بين اللاعبين</li>
+<li>ممنوع الشخصنة</li>
+<li>ممنوع التهكير أو الغش</li>
+<li>ممنوع انتحال شخصية إداري</li>
+<li>يجب تصوير اللعب</li>
+<li>ممنوع التوكسك</li>
+</ul>
+
+<h2>Playing Rules</h2>
+<ul>
+<li>ممنوع الهكر بجميع أنواعه</li>
+<li>ممنوع اللبس الجاهز</li>
+<li>ممنوع استخدام القلتشات</li>
+</ul>
 
 <section id="staff" class="reveal">
 <h2>الإدارة</h2>
@@ -67,7 +77,7 @@ footer{text-align:center;padding:30px;background:#111}
 <h2>التقديم للإدارة</h2>
 <div class="card">
 <form>
-<input placeholder="اسمك داخل السيرفر">
+<input placeholder="اسمك ">
 <input placeholder="العمر">
 <input placeholder="الدسكورد">
 <textarea placeholder="لماذا تريد الانضمام للإدارة؟"></textarea>
@@ -76,15 +86,24 @@ footer{text-align:center;padding:30px;background:#111}
 </div>
 </section>
 
-<section id="shop" class="reveal">
-<h2>المتجر</h2>
-<div class="grid">
-<div class="card"><h3>Bronze</h3><p>الباقة البرونزية</p></div>
-<div class="card"><h3>Silver</h3><p>الباقة الفضية</p></div>
-<div class="card"><h3>Gold</h3><p>الباقة الذهبية</p></div>
-<div class="card"><h3>Diamond</h3><p>الباقة الماسية</p></div>
+<h1>🛒 متجر Ro7 Fight</h1>
+
+<div class="item">
+  <h3>ايدي ثنائي سالب</h3>
+  <p>45 دولار</p>
 </div>
-</section>
+
+<div class="item">
+  <h3>ايدي ثلاثي سالب</h3>
+  <p>25 دولار</p>
+</div>
+
+<div class="item">
+  <h3>رموز القبائل</h3>
+  <p>25 دولار</p>
+</div>
+
+<p>للطلب: افتح تكت في ديسكورد</p>
 
 <footer>
 RO7 Fight Server © 2026
